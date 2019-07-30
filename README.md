@@ -5,7 +5,7 @@
 * PHP 7.3
 * Composer
 * MySQL
-* Node.js 10
+* Node.js 12
 * Google Coud SDK
 
 ## Testing

@@ -41,8 +41,8 @@ RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --install-di
 # MySQL
 RUN apt-get update && apt-get install -y mysql-client 
 
-# Node.js v10
-RUN curl --silent --location https://deb.nodesource.com/setup_10.x | bash - \
+# Node.js v12
+RUN curl --silent --location https://deb.nodesource.com/setup_12.x | bash - \
     && apt-get install nodejs -y
 
 # "fake" dbus address to prevent errors
@@ -75,7 +75,7 @@ ADD https://circle-downloads.s3.amazonaws.com/releases/build_agent_wrapper/circl
 RUN chmod +x /usr/local/bin/circleci
 
 # Lokalise
-ADD https://s3-eu-west-1.amazonaws.com/lokalise-assets/cli/lokalise-0.581-linux-amd64.tgz /tmp
+ADD https://s3-eu-west-1.amazonaws.com/lokalise-assets/cli/lokalise-0.711-linux-amd64.tgz /tmp
 RUN cd tmp && tar xvfz lokalise*.tgz && mv /tmp/lokalise /usr/local/bin
 
 # Install Google Chrome
